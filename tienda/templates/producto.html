@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-9">
+                <div class="card mt-4">
+                    {% if producto.imagen %}
+                        <img class="card-img-top" src="{{ producto.imagen.url }}" alt="{{ producto.nombre }}">
+                    {% else %}
+                        <img class="card-img-top" src="http://placehold.it/700x400" alt="{{ producto.nombre }}">
+                    {% endif %}
+                    <div class="card-body">
+                        <h3 class="card-title">{{ producto.nombre }}</h3>
+                        <h4>{{ producto.precio }}</h4>
+                        <p class="card-text">{{ producto.descripcion }}</p>
+                        <p class="card-text">Stock: {{ producto.stock }}</p>
+                        <span class="text-warning">&#9733; &#9733; &#9733; &#9733; &#9734;</span>
+                        4.0 stars
+                    </div>
+                </div>
+                <!-- /.card -->
+            </div>
+            <!-- /.col-lg-9 -->
+        </div>
+    </div>
+    <!-- /.container -->
+{% endblock %}
